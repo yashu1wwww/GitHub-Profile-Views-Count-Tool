@@ -8,7 +8,7 @@ Real-time GitHub Live Profile Views Count Tool that fetches the live Profile vie
 
 Search github live profile views here
 
-https://yashawanthtechprojects.on.drv.tw/GitHub/followers.html
+https://yashawanthtechprojects.on.drv.tw/GitHub/profile.html
 
 𝙉𝙤𝙩𝙚: 𝙄𝙩 𝙤𝙣𝙡𝙮 𝙛𝙚𝙩𝙘𝙝𝙚𝙨 𝙩𝙝𝙚 𝙙𝙖𝙩𝙖 𝙛𝙤𝙧 𝙩𝙝𝙤𝙨𝙚 𝙬𝙝𝙤 𝙝𝙖𝙫𝙚 𝙖𝙙𝙙𝙚𝙙 𝙩𝙝𝙚 𝙥𝙧𝙤𝙛𝙞𝙡𝙚 𝙫𝙞𝙨𝙞𝙩𝙨 𝙘𝙤𝙪𝙣𝙩 𝙤𝙣 𝙩𝙝𝙚𝙞𝙧 𝙂𝙞𝙩𝙃𝙪𝙗 𝙤𝙫𝙚𝙧𝙫𝙞𝙚𝙬.
 
