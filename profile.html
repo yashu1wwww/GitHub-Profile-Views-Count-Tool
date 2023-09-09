@@ -1,13 +1,19 @@
+<!-- Copying the code is easy, but when you create it, you have to become busy -->
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GITHUB LIVE PROFILE VIEWS COUNT</title>
+  
+   <!-- Correct the favicon URL and specify the type -->
+    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+    
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-image: url('https://cdn.pixabay.com/photo/2023/03/16/08/42/camping-7856198_960_720.jpg');
+      background-image: url('https://wallpaperaccess.com/full/1567771.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -125,7 +131,7 @@
 <body>
   <p align="center">
     <b><img
-        src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=FFFFFF&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+PROFILE+VISITS+COUNT;IF+SOMEONES+ACCOUNT+DOESNT+;APPEAR+IT+MEANS+THEY+DONT+;ADDED+A+VIEW+COUNTER+;TO+THEIR+GITHUB+OVERVIEW+;HAPPY+SEARCHING....!"></b>
+        src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=8B0000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+PROFILE+VISITS+COUNT;IF+SOMEONES+ACCOUNT+DOESNT+;APPEAR+IT+MEANS+THEY+DONT+;ADDED+A+VIEW+COUNTER+;TO+THEIR+GITHUB+OVERVIEW+;HAPPY+SEARCHING....!"></b>
   </p>
   <br>
   <center style="margin-top: 20px;">
@@ -171,6 +177,7 @@
 <input type="text" id="username" placeholder="Enter a GitHub username" name="username">
           <input type="submit" value="Submit">
         </form>
+		</br>
         <img src="https://komarev.com/ghpvc/?username=" id="profile-views-counter" class="hidden">
       </div>
      <script>
@@ -199,5 +206,71 @@
         style="color: white; text-decoration: none; font-size: 18px; font-weight: bold;">Copyright Reserved Designed & Developed By Yashawanth R</a>
     </button>
 </body>
+<html>
+ <meta charset="UTF-8">
+  <title>Accept All Cookies Banner</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+}
+
+.cookie-btn {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 2px 5px;
+  margin-left: 5px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+  <div class="cookie-banner">
+    <center>
+  <p>By clicking "Accept All", you consent to the use of all cookies.</p>
+</center>
+<center>
+  <button class="cookie-btn" onclick="acceptAllCookies()">Accept All</button>
+</center>
+</div>
+<script>
+    function acceptAllCookies() {
+      var cookies = document.cookie.split(";");
+
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+
+      document.cookie = "cookies_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+      
+      var banner = document.querySelector(".cookie-banner");
+      
+      banner.style.display = "none";
+    }
+
+    function checkCookiesAccepted() {
+      var cookiesAccepted = document.cookie.indexOf("cookies_accepted=true") !== -1;
+
+      if (cookiesAccepted) {
+        var banner = document.querySelector(".cookie-banner");
+        
+        banner.style.display = "none";
+      }
+    }
+checkCookiesAccepted();
+  </script>
+</body>
 </html>
+
  
