@@ -6,7 +6,7 @@
 
 Real-time GitHub Live Profile Views Count Tool that fetches the live Profile views count of any GitHub username acc
 
-Search github live profile views here
+Search here:
 
 https://yashawanthtechprojects.on.drv.tw/GitHub/profile.html
 
