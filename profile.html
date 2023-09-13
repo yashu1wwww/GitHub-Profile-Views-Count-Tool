@@ -2,17 +2,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Github Live Profile Visit Count</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	 <!-- Correct the favicon URL and specify the type -->
+    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+	
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .target-cursor {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: moveCursor 0.3s infinite alternate;
+        }
+
+        @keyframes moveCursor {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+    </style>
+    <title>GitHub Live Profile Visits Count</title>
+</head>
+<body>
+    <div class="target-cursor"></div>
+
+
+<html lang="en">
+<head>
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
 />
  
-  
-   <!-- Correct the favicon URL and specify the type -->
-    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
-    
-  <style>
+    <style>
     body {
       font-family: Arial, sans-serif;
       background-image: url('https://wallpaperaccess.com/full/1567771.jpg');
@@ -174,7 +216,29 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
     <div class="container">
       <div class="profile-views">
         <form>
-          <label for="username" style="color: #FFFFFF; font-size: 24px; font-family: 'Open Sans', sans-serif; background-color: #333333; border: 2px solid #FFFFFF; padding: 10px;">GITHUB LIVE PROFILE VIEWS COUNT</label>
+ <style>
+        /* Style for the glass button label */
+        label {
+            font-size: 25px;
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background (glass effect) */
+            border: 2px solid #FFF;
+            padding: 8px;
+            color: black;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        label:hover {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background on hover (glass effect) */
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <label for="username">GITHUB LIVE PROFILE VIEWS COUNT</label>
+</br>
 </br>
 <input type="text" id="username" placeholder="Enter a GitHub username" name="username">
           <input type="submit" value="Submit">
@@ -183,25 +247,35 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
         <img src="https://komarev.com/ghpvc/?username=" id="profile-views-counter" class="hidden">
       </div>
      <script>
-        async function checkUsername(username) {
-          const res = await fetch(`https://api.github.com/users/${username}`)
-          return res.status === 200;
-        }
-        const form = document.querySelector('form');
-        const img = document.querySelector('#profile-views-counter');
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
-          const username = form.elements.username.value;
-          if (checkUsername(username)) {
-            const imageUrl = `https://komarev.com/ghpvc/?username=${username}&label=PROFILE VIEWS&color=red&style=flat`;
-            img.src = imageUrl;
-            img.classList.remove("hidden");
-          } else {
-            img.classList.toggle("hidden");
-          }
+       // Function to check if the username exists on GitHub
+async function checkUsername(username) {
+  const res = await fetch(`https://api.github.com/users/${username}`)
+  return res.status === 200;
+}
 
-        });
+const form = document.querySelector('form');
+const img = document.querySelector('#profile-views-counter');
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const username = form.elements.username.value;
+  
+  if (await checkUsername(username)) {
+    const imageUrl = `https://komarev.com/ghpvc/?username=${username}&label=PROFILE VIEWS&color=red&style=flat`;
+    img.src = imageUrl;
+    img.classList.remove("hidden");
+  } else {
+    // Add an error message
+    alert("Username Not Found.Please Enter A Valid GitHub Username.");
+    // Optionally, you can clear the input field
+    form.elements.username.value = "";
+    // Hide the image
+    img.classList.add("hidden");
+  }
+});
+
 </script>
+
 <center style="margin-top: 20px;">
     <button style="background-color: black; padding: 10px 20px; margin-right: 10px;">
       <a href=""
@@ -238,7 +312,13 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
 </script>
 <script src="https://d36jcksde1wxzq.cloudfront.net/bugsnag.aa0d0038ca72648bf8ec.js"></script>
 <script src="https://d36jcksde1wxzq.cloudfront.net/main.fb8d2007b0855c3bebb3.js"></script>
-
+<script>
+    // Custom cursor
+    const targetCursor = document.querySelector('.target-cursor');
+    document.addEventListener('mousemove', (e) => {
+        targetCursor.style.left = e.clientX + 'px';
+        targetCursor.style.top = e.clientY + 'px';
+    });
+</script>
 </body>
 </html>
- 
