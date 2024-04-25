@@ -1,5 +1,3 @@
-## Please feel free to share any updates or errors.
-
 Real-time GitHub Live Profile Views Count Tool that fetches the live Profile views count of any GitHub username acc
 
 Search here:
