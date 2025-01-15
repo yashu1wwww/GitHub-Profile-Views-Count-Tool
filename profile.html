@@ -1,5 +1,230 @@
 <!-- Copying the code is easy, but when you create it, you have to become busy -->
-
-For Source Code Open Link & Press Ctrl+U
-
-To view the source code of a webpage on Android, add view-source: before url
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GitHub Live Profile Visits Count</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- Favicon -->
+    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+    <div class="target-cursor"></div>
+	<style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpaperaccess.com/full/1567771.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-size: 16px;
+            color: #ffffff;
+        }
+ 
+        .target-cursor {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: moveCursor 0.3s infinite alternate;
+        }
+ 
+        @keyframes moveCursor {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+ 
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+ 
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 32px;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 294px;
+            color: #000000;
+        }
+ 
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+ 
+            .container {
+                padding: 10px;
+            }
+ 
+            input[type="text"] {
+                font-size: 16px;
+                width: 100%;
+                max-width: 200px;
+            }
+ 
+            input[type="submit"] {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+ 
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -30px;
+        }
+ 
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+            margin-bottom:-14px;
+            border: 1px solid red;
+            padding: 5px;
+        }
+ 
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius:25px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+ 
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+ 
+        .profile-views {
+            text-align: center;
+            margin-top: 50px;
+        }
+ 
+        .profile-views img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            margin-top: 20px;
+        }
+ 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+ button {
+                display: inline-block;
+                border: -13px solid black;
+                border-radius:36px;
+                transition: background-color 0.3s ease-in-out;
+            }
+ 
+            button:hover {
+                background-color: black;
+                color: white;
+            }
+ 
+            .hidden {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+    <p align="center">
+        <b><img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=20&duration=5001&color=8B0000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB;+LIVE+PROFILE+VISITS+COUNT;IF+SOMEONES+ACCOUNT+DOESNT+;APPEAR+IT+MEANS+THEY+DONT+;ADDED+A+VIEW+COUNTER+;TO+THEIR+GITHUB+OVERVIEW+;HAPPY+SEARCHING....!"></b>
+    </p>
+    <br>
+    <center style="margin-top: 20px;">
+        <button style="background-color: white; padding: 10px 20px; margin-right: 10px;">
+            <a href="mailto:yashwanth6678@gmail.com" style="color: black; text-decoration: none; font-size: 18px; font-weight: bold;">Contact Me</a>
+        </button>
+        <button style="background-color: white; padding: 10px 20px; margin-left: 10px;">
+            <a href="https://github.com/yashu1wwww" style="color: black; text-decoration: none; font-size: 18px; font-weight: bold;">GitHub Account</a>
+        </button>
+        <center style="margin-top: 20px;">
+            <button style="background-color: white; padding: 10px 20px; margin-right: 10px;">
+                <a href="https://yashawanthtechprojects.on.drv.tw/web.html" style="color: black; text-decoration: none; font-size: 18px; font-weight: bold;">Web Development Projects</a>
+            </button>
+        </center>
+<div class="profile-views">
+  <form>
+    <label for="username">GITHUB PROFILE VIEWS COUNT</label>
+    <br>
+    <br>
+    <input type="text" id="username" placeholder="Enter GitHub Username..." name="username">
+    <input type="submit" value="SEARCH">
+  </form>
+  <br>
+  <img src="https://komarev.com/ghpvc/?username=" id="profile-views-counter" class="hidden">
+</div>
+<script>
+  async function checkUsername(username) {
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    return res.status === 200;
+  }
+ 
+  const form = document.querySelector('form');
+  const img = document.querySelector('#profile-views-counter');
+  const usernameInput = document.querySelector('#username');
+ 
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const username = form.elements.username.value.trim();
+ 
+    if (await checkUsername(username)) { 
+      const imageUrl = `https://komarev.com/ghpvc/?username=${username}&label=PROFILE%20VIEWS&color=red&style=flat`;
+      img.src = imageUrl;
+      img.classList.remove("hidden");
+ 
+      usernameInput.classList.remove("shake");
+    } else {
+      alert("Only Valid GitHub Username Search Is Acceptable.");
+	  
+      img.classList.add("hidden");
+    }
+  });
+</script>
+<center style="margin-top: 20px;">
+            <button style="background-color: black; padding: -2px 20px; margin-right: 10px;">
+                <a style="color: white; text-decoration: none; font-size: 18px; font-weight: bold;">Copyright ® Developed By Yashawanth R</a>
+            </button>
+    <script>
+        // Custom cursor
+        const targetCursor = document.querySelector('.target-cursor');
+        document.addEventListener('mousemove', (e) => {
+            targetCursor.style.left = e.clientX + 'px';
+            targetCursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>
